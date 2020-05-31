@@ -13,7 +13,7 @@ export const App = () => {
    * Note: The corresponding styles are in the ./app.css file.
    */
   return (
-    <div className="app">
+    <div className="app" data-testid="app-container">
       <Dashboard />
       {/* <header className="flex">
         <h1>Welcome to leaderboard!</h1>

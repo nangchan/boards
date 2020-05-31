@@ -30,6 +30,10 @@ export const leaders = deals.reduce(
   {}
 );
 
+const sortedLeaders = Object.values(leaders)
+  .filter((row) => row.id)
+  .sort((row1, row2) => row2.won - row1.won);
+
 export default function Leaders() {
   return (
     <React.Fragment>
@@ -52,14 +56,28 @@ export default function Leaders() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {Object.values(leaders).map((row) => (
+          {sortedLeaders.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{row.id ? row.name : <b>{row.name}</b>}</TableCell>
-              <TableCell>{row.id ? row.won : <b>{row.won}</b>}</TableCell>
-              <TableCell>{row.id ? row.open : <b>{row.open}</b>}</TableCell>
-              <TableCell>{row.id ? row.lost : <b>{row.lost}</b>}</TableCell>
+              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.open}</TableCell>
+              <TableCell>{row.won}</TableCell>
+              <TableCell>{row.lost}</TableCell>
             </TableRow>
           ))}
+          <TableRow>
+            <TableCell>
+              <b>{leaders.totals.name}</b>
+            </TableCell>
+            <TableCell>
+              <b>{leaders.totals.open}</b>
+            </TableCell>
+            <TableCell>
+              <b>{leaders.totals.won}</b>
+            </TableCell>
+            <TableCell>
+              <b>{leaders.totals.lost}</b>
+            </TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </React.Fragment>

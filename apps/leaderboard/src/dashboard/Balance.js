@@ -38,47 +38,8 @@ export default function Balance() {
   return (
     <React.Fragment>
       <Switch>
-        <Route path="/dashboard/open">
-          <RouterLink to="/" className={classes.link}>
-            <Typography
-              color="textSecondary"
-              className={classes.balanceContext}
-            >
-              Won:
-              <CurrencyFormat
-                value={leaders.totals.won}
-                thousandSeparator={true}
-                displayType="text"
-              />
-            </Typography>
-          </RouterLink>
-          <br />
-          <Title>Open</Title>
-          <Typography component="p" variant="h4">
-            <CurrencyFormat
-              value={leaders.totals.open}
-              thousandSeparator={true}
-              displayType="text"
-            />
-          </Typography>
-          <br />
-          <RouterLink to="/dashboard/lost" className={classes.link}>
-            <Typography
-              color="textSecondary"
-              className={classes.balanceContext}
-            >
-              Lost:
-              <CurrencyFormat
-                value={leaders.totals.lost}
-                thousandSeparator={true}
-                displayType="text"
-              />
-            </Typography>
-          </RouterLink>
-        </Route>
-
         <Route path="/dashboard/lost">
-          <RouterLink to="/" className={classes.link}>
+          <RouterLink to="/dashboard/won" className={classes.link}>
             <Typography
               color="textSecondary"
               className={classes.balanceContext}
@@ -92,7 +53,7 @@ export default function Balance() {
             </Typography>
           </RouterLink>
           <br />
-          <RouterLink to="/dashboard/open" className={classes.link}>
+          <RouterLink to="/" className={classes.link}>
             <Typography
               color="textSecondary"
               className={classes.balanceContext}
@@ -116,7 +77,7 @@ export default function Balance() {
           </Typography>
         </Route>
 
-        <Route path="/">
+        <Route path="/dashboard/won">
           <Title>Won</Title>
           <Typography component="p" variant="h4">
             <CurrencyFormat
@@ -126,7 +87,7 @@ export default function Balance() {
             />
           </Typography>
           <br />
-          <RouterLink to="/dashboard/open" className={classes.link}>
+          <RouterLink to="/" className={classes.link}>
             <Typography
               color="textSecondary"
               className={classes.balanceContext}
@@ -139,6 +100,45 @@ export default function Balance() {
               />
             </Typography>
           </RouterLink>
+          <br />
+          <RouterLink to="/dashboard/lost" className={classes.link}>
+            <Typography
+              color="textSecondary"
+              className={classes.balanceContext}
+            >
+              Lost:
+              <CurrencyFormat
+                value={leaders.totals.lost}
+                thousandSeparator={true}
+                displayType="text"
+              />
+            </Typography>
+          </RouterLink>
+        </Route>
+
+        <Route path="/">
+          <RouterLink to="/dashboard/won" className={classes.link}>
+            <Typography
+              color="textSecondary"
+              className={classes.balanceContext}
+            >
+              Won:
+              <CurrencyFormat
+                value={leaders.totals.won}
+                thousandSeparator={true}
+                displayType="text"
+              />
+            </Typography>
+          </RouterLink>
+          <br />
+          <Title>Open</Title>
+          <Typography component="p" variant="h4">
+            <CurrencyFormat
+              value={leaders.totals.open}
+              thousandSeparator={true}
+              displayType="text"
+            />
+          </Typography>
           <br />
           <RouterLink to="/dashboard/lost" className={classes.link}>
             <Typography

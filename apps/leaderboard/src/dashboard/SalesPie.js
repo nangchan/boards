@@ -26,7 +26,7 @@ export default function SalesPie() {
       <ResponsiveContainer>
         <PieChart width={800} height={400}>
           <Pie
-            dataKey={status ?? 'won'}
+            dataKey={status ?? 'open'}
             // label
             isAnimationActive={false}
             labelLine={true}
