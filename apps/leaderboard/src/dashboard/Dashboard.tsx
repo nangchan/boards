@@ -141,6 +141,13 @@ function Dashboard({ width }) {
   ) => {
     setOpen(false);
   };
+  const handleDrawerCloseOnClick = (
+    _event: MouseEvent<HTMLDocument | HTMLElement>
+  ) => {
+    if (variant === VARIANT_TYPE.TEMPORARY) {
+      setOpen(false);
+    }
+  };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   useEffect(() => {
@@ -196,7 +203,8 @@ function Dashboard({ width }) {
           }}
           open={open}
           variant={variant}
-          onBackdropClick={handleDrawerClose}
+          // onBackdropClick={handleDrawerClose}
+          onClick={handleDrawerCloseOnClick}
         >
           <div className={classes.toolbarIcon}>
             <IconButton onClick={handleDrawerClose}>
