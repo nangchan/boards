@@ -73,7 +73,7 @@ export default class Grid extends Component {
 
     httpRequest.open(
       'GET',
-      'https://raw.githubusercontent.com/ag-grid/ag-grid/master/grid-packages/ag-grid-docs/src/olympicWinnersSmall.json'
+      'https://raw.githubusercontent.com/ag-grid/ag-grid/master/grid-packages/ag-grid-docs/src/olympicWinnersSmall.json',
     );
     httpRequest.send();
     httpRequest.onreadystatechange = () => {

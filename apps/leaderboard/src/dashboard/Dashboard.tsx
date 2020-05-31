@@ -130,18 +130,18 @@ function Dashboard({ width }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const [variant, setVariant] = React.useState<VARIANT_TYPE>(
-    VARIANT_TYPE.PERMANENT
+    VARIANT_TYPE.PERMANENT,
   );
   const handleDrawerOpen = (_event: MouseEvent<HTMLDocument | HTMLElement>) => {
     setOpen(true);
   };
   const handleDrawerClose = (
-    _event: MouseEvent<HTMLDocument | HTMLElement>
+    _event: MouseEvent<HTMLDocument | HTMLElement>,
   ) => {
     setOpen(false);
   };
   const handleDrawerCloseOnClick = (
-    _event: MouseEvent<HTMLDocument | HTMLElement>
+    _event: MouseEvent<HTMLDocument | HTMLElement>,
   ) => {
     if (variant === VARIANT_TYPE.TEMPORARY) {
       setOpen(false);
@@ -175,7 +175,7 @@ function Dashboard({ width }) {
               onClick={handleDrawerOpen}
               className={clsx(
                 classes.menuButton,
-                open && classes.menuButtonHidden
+                open && classes.menuButtonHidden,
               )}
             >
               <MenuIcon />
