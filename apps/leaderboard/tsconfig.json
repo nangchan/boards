@@ -7,11 +7,12 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "types": ["node", "jest"]
+    // "checkJs": false
   },
   "files": [
     "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
     "../../node_modules/@nrwl/react/typings/image.d.ts"
   ],
-  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
-  "exclude": ["./jest.config.js"] // fix overwrite here
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
+  // "exclude": ["./jest.config.js"] // fix overwrite here
 }
