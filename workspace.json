@@ -21,7 +21,7 @@
             ],
             "styles": ["apps/leaderboard/src/styles.css"],
             "scripts": [],
-            "webpackConfig": "@nrwl/react/plugins/webpack"
+            "webpackConfig": "apps/leaderboard/webpack.config.js"
           },
           "configurations": {
             "production": {

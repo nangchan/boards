@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
-    "allowJs": true, // turn this off if overwrite warning persists
+    "allowJs": false, // turn this off if overwrite warning persists
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "types": ["node", "jest"]
@@ -13,6 +13,6 @@
     "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
     "../../node_modules/@nrwl/react/typings/image.d.ts"
   ],
-  "include": ["**/*.jsx", "**/*.ts", "**/*.tsx"],
-  "exclude": ["./jest.config.js", "./src/dashboard/deals.stub.js"] // fix overwrite here
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+  "exclude": ["./jest.config.js"] // fix overwrite here
 }
