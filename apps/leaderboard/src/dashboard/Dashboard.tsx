@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, MouseEvent } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -24,6 +24,7 @@ import Balance from './Balance';
 import Deals from './Deals';
 import Leaders from './Leaders';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import withWidth from '@material-ui/core/withWidth';
 
 function Copyright() {
@@ -120,20 +121,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const VARIANT_TYPE = {
-  PERMANENT: 'permanent',
-  TEMPORARY: 'temporary',
-  PERSISTENT: 'persistent',
-};
+enum VARIANT_TYPE {
+  PERMANENT = 'permanent',
+  TEMPORARY = 'temporary',
+  PERSISTENT = 'persistent',
+}
 
 function Dashboard({ width }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
-  const [variant, setVariant] = React.useState(VARIANT_TYPE.PERMANENT);
-  const handleDrawerOpen = () => {
+  const [variant, setVariant] = React.useState<VARIANT_TYPE>(
+    VARIANT_TYPE.PERMANENT
+  );
+  const handleDrawerOpen = (_event: MouseEvent<HTMLDocument | HTMLElement>) => {
     setOpen(true);
   };
-  const handleDrawerClose = () => {
+  const handleDrawerClose = (
+    _event: MouseEvent<HTMLDocument | HTMLElement>
+  ) => {
     setOpen(false);
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
@@ -191,6 +196,7 @@ function Dashboard({ width }) {
           }}
           open={open}
           variant={variant}
+          onBackdropClick={handleDrawerClose}
         >
           <div className={classes.toolbarIcon}>
             <IconButton onClick={handleDrawerClose}>

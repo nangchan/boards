@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -7,8 +7,16 @@ import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 import deals from './deals.stub';
 
-export const leaders = deals.reduce(
-  (stats, row) => ({
+interface FStat {
+  id: number;
+  name: string;
+  won: number;
+  open: number;
+  lost: number;
+}
+
+export const leaders: { [key: string]: FStat } = deals.reduce(
+  (stats: { [key: string]: FStat }, row: any) => ({
     ...stats,
     [row.creator.id]: {
       id: row.creator.id,
@@ -30,11 +38,22 @@ export const leaders = deals.reduce(
   {}
 );
 
-const sortedLeaders = Object.values(leaders)
+const sortedLeaders: FStat[] = Object.values(leaders)
   .filter((row) => row.id)
   .sort((row1, row2) => row2.won - row1.won);
 
 export default function Leaders() {
+  // const [state, setState] = useState({
+  //   columnDefs: [
+  //     { headerName: 'Sales Person', field: 'name' },
+  //     { headerName: 'Open', field: 'open' },
+  //     { headerName: 'Won', field: 'won' },
+  //     { headerName: 'Lost', field: 'lost' },
+  //   ],
+  //   defaultColDef: { resizable: true },
+  //   rowData: Object.values(leaders),
+  // });
+
   return (
     <React.Fragment>
       <Title>Leaders</Title>

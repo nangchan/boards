@@ -2,15 +2,17 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
-    "allowJs": true,
+    "allowJs": true, // turn this off if overwrite warning persists
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "types": ["node", "jest"]
+    // "checkJs": false,
+    // "noEmit": false
   },
   "files": [
     "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
     "../../node_modules/@nrwl/react/typings/image.d.ts"
   ],
-  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
-  "exclude": ["./jest.config.js", "./src/dashboard/Balance.js"] // fix overwrite here
+  "include": ["**/*.jsx", "**/*.ts", "**/*.tsx"],
+  "exclude": ["./jest.config.js", "./src/dashboard/deals.stub.js"] // fix overwrite here
 }
