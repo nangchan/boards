@@ -24,7 +24,6 @@ import Balance from './Balance';
 import Deals from './Deals';
 import Leaders from './Leaders';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import withWidth from '@material-ui/core/withWidth';
 
 function Copyright() {

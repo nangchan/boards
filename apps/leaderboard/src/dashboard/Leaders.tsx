@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -15,8 +15,40 @@ interface FStat {
   lost: number;
 }
 
+interface FDeal {
+  creator: {
+    id: number;
+    firstName: string;
+    lastName: string;
+  };
+  person: {
+    id: number;
+    firstName: string;
+    lastName: string;
+  };
+  company: {
+    name: string;
+    id: number;
+  };
+  emails: {
+    type: string;
+    email: string;
+  }[];
+  phones: {
+    type: string;
+    phone: number | string;
+  }[];
+  crmname: string;
+  deal: {
+    id: number;
+    status: string;
+    value: number;
+    title: string;
+  };
+}
+
 export const leaders: { [key: string]: FStat } = deals.reduce(
-  (stats: { [key: string]: FStat }, row: any) => ({
+  (stats: { [key: string]: FStat }, row: FDeal) => ({
     ...stats,
     [row.creator.id]: {
       id: row.creator.id,
@@ -35,14 +67,14 @@ export const leaders: { [key: string]: FStat } = deals.reduce(
       lost: (stats?.totals?.lost || 0) + +(row.deal.status === 'lost'),
     },
   }),
-  {}
+  {},
 );
 
 const sortedLeaders: FStat[] = Object.values(leaders)
   .filter((row) => row.id)
   .sort((row1, row2) => row2.won - row1.won);
 
-export default function Leaders() {
+export default function Leaders(): React.ReactElement {
   // const [state, setState] = useState({
   //   columnDefs: [
   //     { headerName: 'Sales Person', field: 'name' },

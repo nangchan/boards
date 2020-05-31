@@ -18,7 +18,7 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'green'];
 const customLabel = (props) =>
   props.name + ` (${(props.percent * 100).toFixed(0)}%)`;
 
-export default function SalesPie() {
+export default function SalesPie(): React.ReactElement {
   const { status } = useParams();
   return (
     <React.Fragment>

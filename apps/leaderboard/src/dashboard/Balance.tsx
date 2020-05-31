@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Balance() {
+export default function Balance(): React.ReactElement {
   const classes = useStyles();
 
   // // const salesStats: {wonAmount: Number, openAmount: Number, lostAmount: number} = deals.reduce(

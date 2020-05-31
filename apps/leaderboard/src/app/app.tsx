@@ -6,7 +6,7 @@ import Dashboard from '../dashboard/Dashboard';
 // import { ReactComponent as Logo } from './logo.svg';
 // import star from './star.svg';
 
-export const App = () => {
+export const App = (): React.ReactElement => {
   /*
    * Replace the elements below with your own.
    *
