@@ -1,5 +1,5 @@
 {
-  "npmScope": "nangchan",
+  "npmScope": "boards",
   "implicitDependencies": {
     "workspace.json": "*",
     "package.json": {

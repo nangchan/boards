@@ -139,7 +139,6 @@ function Dashboard({ width }) {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   useEffect(() => {
-    console.log('nang', width);
     if (width === 'sm' || width === 'xs') {
       setVariant(VARIANT_TYPE.TEMPORARY);
       setOpen(false);

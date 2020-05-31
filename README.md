@@ -1,16 +1,17 @@
-# Nangchan
-
 ## Leaderboard
 
-Sample project to display won/open leaders
+![screenshot](apps/leaderboard/src/images/screenshot.png)
+
+Sample project to display won/open leaders using the following:
 
 - React (with Hooks)
 - Material-UI
 - Recharts
 
-http://localhost:4200/
+Requires:
 
-![screenshot](apps/leaderboard/src/images/screenshot.png)
+- NodeJS 14 (lower version may work)
+- NPM 6 (lower version may work)
 
 ### To clone
 
@@ -24,6 +25,8 @@ http://localhost:4200/
 ### To run the app
 
     npm start
+
+[visit http://localhost:4200/](http://localhost:4200/)
 
 ### To run the tests
 
