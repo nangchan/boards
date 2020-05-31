@@ -27,9 +27,17 @@
   },
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.10.0",
+    "@material-ui/icons": "^4.9.1",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/recharts": "^1.8.10",
     "document-register-element": "1.13.1",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-currency-format": "^1.0.0",
+    "react-dom": "16.12.0",
+    "react-router-dom": "^5.2.0",
+    "recharts": "^1.8.5",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@nrwl/workspace": "9.3.0",
