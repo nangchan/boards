@@ -1,13 +1,12 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "outDir": "../leaderboard-tsc", // turn this off if overwrite warning persists
     "jsx": "react",
-    "allowJs": false, // turn this off if overwrite warning persists
+    "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "types": ["node", "jest"]
-    // "checkJs": false,
-    // "noEmit": false
   },
   "files": [
     "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",

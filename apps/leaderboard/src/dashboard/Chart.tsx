@@ -27,7 +27,7 @@ const data = [
   createData('24:00', undefined),
 ];
 
-export default function Chart() {
+export default function Chart(): React.ReactElement {
   const theme = useTheme();
 
   return (

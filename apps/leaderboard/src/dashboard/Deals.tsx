@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Deals() {
+export default function Deals(): React.ReactElement {
   const classes = useStyles();
   const location = useLocation();
   const [limit, setLimit] = useState(10);
